@@ -1,0 +1,13 @@
+dataset: "CIFAR10"
+depth: 24
+emb_size: 1280
+head_num: 16
+batch_size: 2048
+n_epochs: 300
+warmup_epochs: 10
+patch_size: 4
+betas: '0.9,0.99'
+mixup: true
+longtail: false
+
+lr: 1e-4

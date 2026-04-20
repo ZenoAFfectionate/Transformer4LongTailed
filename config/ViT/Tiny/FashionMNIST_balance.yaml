@@ -1,0 +1,17 @@
+dataset: "FashionMNIST"
+channels: 1
+image_size: 28
+patch_size: 4
+num_classes: 10
+
+depth: 8
+emb_size: 512
+head_num: 8
+batch_size: 256
+n_epochs: 200
+warmup_epochs: 10
+betas: '0.9,0.99'
+mixup: true
+longtail: false
+
+lr: 1e-4

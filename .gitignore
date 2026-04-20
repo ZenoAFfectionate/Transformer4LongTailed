@@ -1,0 +1,56 @@
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 编辑器 / 操作系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# 密钥 / 环境变量
+.env
+.env.local
+
+# ML 产物（双保险）
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.npy
+*.npz
+*.h5
+
+# 项目专属目录（保留空目录，忽略内容）
+checkpoint/*
+!checkpoint/
+log/*
+!log/
+wandb/*
+!wandb/
+
+# 项目专属目录（整体忽略）
+results/
+docs/
+.claude/
+
+# 大型数据集 split 清单（请在 README 提供下载链接）
+dataset/data_txt/*.txt

@@ -1,0 +1,27 @@
+model_name: SwT
+dataset: CIFAR100
+num_classes: 100
+channels: 3
+image_size: 32
+patch_size: 2
+window_size: 2
+
+emb_size: 48
+depth: 8
+head_num: 3
+
+batch_size: 256
+n_epochs: 200
+warmup_epochs: 10
+betas: '0.9,0.99'
+lr: 3e-4
+weight_decay: 0.05
+drop_p: 0.1
+label_smoothing: 0.1
+
+mixup: true
+longtail: false
+
+head_class_idx: [0, 36]
+med_class_idx:  [36, 71]
+tail_class_idx: [71, 100]

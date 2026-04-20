@@ -1,0 +1,34 @@
+model_name: MoE4SwT
+dataset: CIFAR100
+num_classes: 100
+channels: 3
+image_size: 32
+patch_size: 2
+
+emb_size: 384
+depth: 12
+head_num: 6
+num_experts: 8
+share_experts: 2
+top_k: 2
+moe_aux_weight: 1.0
+
+batch_size: 256
+n_epochs: 200
+warmup_epochs: 10
+betas: '0.9,0.99'
+lr: 3e-4
+weight_decay: 0.05
+drop_p: 0.1
+attn_drop: 0.0
+label_smoothing: 0.1
+
+mixup: true
+longtail: true
+imb_type: exp
+imb_factor: 0.01
+loss_type: LDAM
+
+head_class_idx: [0, 36]
+med_class_idx:  [36, 71]
+tail_class_idx: [71, 100]
