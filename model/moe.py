@@ -287,7 +287,10 @@ class SparseMoE(nn.Module):
 
     def get_aux_loss(self) -> torch.Tensor:
         if self._last_aux_loss is None:
-            return torch.tensor(0.0)
+            # Defensive: return a 0-tensor on the gate's device so downstream
+            # ``loss + aux_weight * aux`` never mixes CPU/GPU tensors, even
+            # if called before any forward pass (e.g. in test harnesses).
+            return torch.zeros((), device=self.gate.weight.device)
         return self._last_aux_loss
 
     def get_expert_load(self):
